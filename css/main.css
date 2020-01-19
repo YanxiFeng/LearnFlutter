@@ -3,7 +3,6 @@ body {
 }
 
 .whole_page {
-    text-align: center;
     background-color: #fff;
 }
 
@@ -54,4 +53,15 @@ a {
     border-radius: .3em;
     padding: 0 10px 0 10px;
     position: relative;
+}
+
+.share {
+    margin: 20px auto;
+}
+.share a {
+    color: #666;
+    font-size: 12px;
+}
+.share a:hover {
+    color: orange;
 }
