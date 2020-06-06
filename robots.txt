@@ -1,13 +1,3 @@
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Allow: /
-Allow: /home/
-Allow: /archives/
-Allow: /gallery/
-Allow: /about/
-Allow: /links/
-Disallow: /images/
-Disallow: /css/
-Disallow: /js/
-Disallow: /fancybox/
-Sitemap: https://zhwangart.github.io/sitemap.xml
-Sitemap: https://zhwangart.github.io/baidusitemap.xml
+Disallow:
