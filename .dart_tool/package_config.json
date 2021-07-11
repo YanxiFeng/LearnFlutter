@@ -134,13 +134,13 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "douban",
+      "name": "learnflutter",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-07-11T13:46:52.425203Z",
+  "generated": "2021-07-11T14:10:55.249122Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }
