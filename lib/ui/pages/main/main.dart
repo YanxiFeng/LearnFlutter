@@ -23,6 +23,8 @@ class _HYMainScreenState extends State<HYMainScreen> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         items: items,
+        selectedFontSize: 14,
+        unselectedFontSize: 14,
         onTap: (index) {
           setState(() {
             _currentIndex = index;

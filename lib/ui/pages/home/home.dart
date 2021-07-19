@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'home_content.dart';
+
 class HYHomeScreen extends StatelessWidget {
   const HYHomeScreen({Key? key}) : super(key: key);
 
@@ -9,9 +11,7 @@ class HYHomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("美食广场"),
       ),
-      body: Center(
-        child: Text("美食"),
-      ),
+      body: HYHomeContent(),
     );
   }
 }
