@@ -35,10 +35,14 @@ class _HYHomeContentState extends State<HYHomeContent> {
             mainAxisSpacing: 20,
             childAspectRatio: 1.5),
         itemBuilder: (ctx, index) {
+          final bgColor = _categories[index].cColor;
+
           return Container(
             decoration: BoxDecoration(
-                color: Colors.lightBlue,
-                borderRadius: BorderRadius.circular(12)),
+                color: bgColor,
+                borderRadius: BorderRadius.circular(12),
+                gradient: LinearGradient(
+                    colors: [bgColor.withOpacity(0.5), bgColor])),
             alignment: Alignment.center,
             child: Text(
               _categories[index].title,

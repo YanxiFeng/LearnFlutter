@@ -7,7 +7,6 @@ class JsonParse {
   static Future<List<HYCategoryModel>> getCategoryData() async {
     // 1.加载json文件
     final jsonString = await rootBundle.loadString("assets/json/category.json");
-    print(jsonString);
 
     // 2.将jsonString转换成Map/List
     final result = json.decode(jsonString);
