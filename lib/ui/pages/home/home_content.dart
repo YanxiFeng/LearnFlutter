@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/core/model/category_model.dart';
 import 'package:learnflutter/core/services/json_parse.dart';
 
+import 'home_content_item.dart';
+
 class HYHomeContent extends StatefulWidget {
   HYHomeContent({Key? key}) : super(key: key);
 
@@ -35,19 +37,9 @@ class _HYHomeContentState extends State<HYHomeContent> {
             mainAxisSpacing: 20,
             childAspectRatio: 1.5),
         itemBuilder: (ctx, index) {
-          final bgColor = _categories[index].cColor;
-
-          return Container(
-            decoration: BoxDecoration(
-                color: bgColor,
-                borderRadius: BorderRadius.circular(12),
-                gradient: LinearGradient(
-                    colors: [bgColor.withOpacity(0.5), bgColor])),
-            alignment: Alignment.center,
-            child: Text(
-              _categories[index].title,
-              style: Theme.of(context).textTheme.headline3,
-            ),
+          final HYCategoryModel category = _categories[index];
+          return HYHomeContentItem(
+            category,
           );
         });
   }
