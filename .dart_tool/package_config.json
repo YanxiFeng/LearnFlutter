@@ -45,9 +45,9 @@
     },
     {
       "name": "dio",
-      "rootUri": "file:///Users/Yvan/develop/flutter/.pub-cache/hosted/pub.flutter-io.cn/dio-3.0.10",
+      "rootUri": "file:///Users/Yvan/develop/flutter/.pub-cache/hosted/pub.flutter-io.cn/dio-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.4"
+      "languageVersion": "2.12"
     },
     {
       "name": "fake_async",
@@ -69,9 +69,9 @@
     },
     {
       "name": "http_parser",
-      "rootUri": "file:///Users/Yvan/develop/flutter/.pub-cache/hosted/pub.flutter-io.cn/http_parser-3.1.4",
+      "rootUri": "file:///Users/Yvan/develop/flutter/.pub-cache/hosted/pub.flutter-io.cn/http_parser-4.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.3"
+      "languageVersion": "2.12"
     },
     {
       "name": "matcher",
@@ -152,7 +152,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-07-21T01:00:56.404302Z",
+  "generated": "2021-07-21T01:15:21.386495Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }
