@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learnflutter/ui/pages/main/main.dart';
+import 'package:learnflutter/ui/pages/meal/meal.dart';
 
 class HYRouter {
   // 默认启动页面的路由
@@ -7,7 +8,8 @@ class HYRouter {
 
   // 路由配置表
   static final Map<String, WidgetBuilder> routes = {
-    HYMainScreen.routeName: (ctx) => HYMainScreen()
+    HYMainScreen.routeName: (ctx) => HYMainScreen(),
+    HYMealScreen.routeName: (ctx) => HYMealScreen()
   };
 
   // 自己扩展
