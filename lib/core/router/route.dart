@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/ui/pages/detail/detail.dart';
 import 'package:learnflutter/ui/pages/main/main.dart';
 import 'package:learnflutter/ui/pages/meal/meal.dart';
 
@@ -9,7 +10,8 @@ class HYRouter {
   // 路由配置表
   static final Map<String, WidgetBuilder> routes = {
     HYMainScreen.routeName: (ctx) => HYMainScreen(),
-    HYMealScreen.routeName: (ctx) => HYMealScreen()
+    HYMealScreen.routeName: (ctx) => HYMealScreen(),
+    HYDetailScreen.routeName: (ctx) => HYDetailScreen(),
   };
 
   // 自己扩展
