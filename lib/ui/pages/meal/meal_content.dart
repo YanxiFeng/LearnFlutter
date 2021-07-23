@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learnflutter/core/model/category_model.dart';
 import 'package:learnflutter/core/viewmodel/meal_view_model.dart';
+import 'package:learnflutter/ui/pages/meal/meal_item.dart';
 import 'package:provider/provider.dart';
 
 class HYMealContent extends StatelessWidget {
@@ -16,9 +17,7 @@ class HYMealContent extends StatelessWidget {
         return ListView.builder(
             itemCount: meals.length,
             itemBuilder: (ctx, index) {
-              return ListTile(
-                title: Text(meals[index].title),
-              );
+              return HYMealItem(meals[index]);
             });
       },
     );
