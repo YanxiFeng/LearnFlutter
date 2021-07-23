@@ -5,11 +5,11 @@ import 'http_request.dart';
 class HYMealRequest {
   static Future<List<HyMealModel>> requestMealData() async {
     // 1.发送网络请求
-    final url = "/29/meal";
+    final url = "/meal";
     final result = await HttpRequest.request(url);
 
     // 2.json转模型
-    final mealsArray = result["meal"];
+    final mealsArray = result;
     List<HyMealModel> meals = [];
     for (var item in mealsArray) {
       final model = HyMealModel.fromJson(item);

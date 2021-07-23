@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learnflutter/core/model/category_model.dart';
+import 'meal_content.dart';
 
 class HYMealScreen extends StatelessWidget {
   static const String routeName = "/meal";
@@ -12,9 +13,7 @@ class HYMealScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(category.title),
       ),
-      body: Center(
-        child: Text("test"),
-      ),
+      body: HYMealContent(),
     );
   }
 }
