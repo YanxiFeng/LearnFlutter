@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/core/viewmodel/favor_view_model.dart';
 import 'package:learnflutter/core/viewmodel/meal_view_model.dart';
 import 'package:learnflutter/ui/shared/app_theme.dart';
 import 'package:learnflutter/core/router/route.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider(
-    create: (ctx) => HYMealViewModel(), //懒加载
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (ctx) => HYMealViewModel()),
+      ChangeNotifierProvider(create: (ctx) => HYFavorViewModel()),
+    ],
     child: MyApp(),
   ));
 }

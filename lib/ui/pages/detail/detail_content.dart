@@ -70,7 +70,7 @@ class HYDetailContent extends StatelessWidget {
         title,
         style: Theme.of(context)
             .textTheme
-            .display3!
+            .headline3!
             .copyWith(fontWeight: FontWeight.bold),
       ),
     );

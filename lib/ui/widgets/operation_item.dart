@@ -16,7 +16,7 @@ class HYOperationItem extends StatelessWidget {
         ),
         Text(
           _title,
-          style: Theme.of(context).textTheme.body1,
+          style: Theme.of(context).textTheme.bodyText1,
         )
       ],
     );

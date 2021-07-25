@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:learnflutter/core/model/meal_model.dart';
+import 'package:learnflutter/core/viewmodel/favor_view_model.dart';
 import 'package:learnflutter/ui/pages/detail/detail.dart';
 import 'package:learnflutter/ui/widgets/operation_item.dart';
+import 'package:provider/provider.dart';
 
 class HYMealItem extends StatelessWidget {
   final HyMealModel _item;
@@ -51,7 +53,7 @@ class HYMealItem extends StatelessWidget {
                 _item.title,
                 style: Theme.of(context)
                     .textTheme
-                    .display3!
+                    .headline3!
                     .copyWith(color: Colors.white),
               ),
             ))
@@ -67,14 +69,23 @@ class HYMealItem extends StatelessWidget {
         children: [
           HYOperationItem(Icon(Icons.schedule), "${_item.duration}分钟"),
           HYOperationItem(Icon(Icons.restaurant), "${_item.complexStr}"),
-          HYOperationItem(
-              Icon(
-                Icons.favorite,
-                color: Colors.redAccent,
-              ),
-              "未收藏"),
+          buildFavoriteIcon(_item),
         ],
       ),
     );
+  }
+
+  Widget buildFavoriteIcon(HyMealModel meal) {
+    return Consumer<HYFavorViewModel>(builder: (ctx, favorVM, child) {
+      final iconColor =
+          favorVM.isContainsFavor(meal) ? Colors.redAccent : Colors.black;
+      final text = favorVM.isContainsFavor(meal) ? "已收藏" : "未收藏";
+      return HYOperationItem(
+          Icon(
+            Icons.favorite,
+            color: iconColor,
+          ),
+          text);
+    });
   }
 }
