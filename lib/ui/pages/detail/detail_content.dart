@@ -80,19 +80,21 @@ class HYDetailContent extends StatelessWidget {
   Widget buildMakeSteps(BuildContext context) {
     return buildMakeContent(
         context: context,
-        child: ListView.builder(
-            padding: EdgeInsets.zero,
+        child: ListView.separated(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
+            padding: EdgeInsets.zero,
             itemCount: _meal.steps.length,
             itemBuilder: (ctx, index) {
-              return Card(
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  child: Text(_meal.steps[index]),
+              return ListTile(
+                leading: CircleAvatar(
+                  child: Text("#${index + 1}"),
                 ),
+                title: Text(_meal.steps[index]),
               );
+            },
+            separatorBuilder: (ctx, index) {
+              return Divider();
             }));
   }
 }
