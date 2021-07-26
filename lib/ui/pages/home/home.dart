@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/ui/pages/home/home_drawer.dart';
 
 import 'home_content.dart';
 
@@ -12,6 +13,7 @@ class HYHomeScreen extends StatelessWidget {
         title: Text("美食广场"),
       ),
       body: HYHomeContent(),
+      drawer: HYHomeDrawer(),
     );
   }
 }
