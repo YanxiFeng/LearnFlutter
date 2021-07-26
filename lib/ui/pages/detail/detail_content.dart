@@ -23,6 +23,7 @@ class HYDetailContent extends StatelessWidget {
   // 图片
   Widget buildMakeImage() {
     return Container(
+      width: double.infinity,
       child: Image.network(_meal.imageUrl),
     );
   }

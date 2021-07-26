@@ -63,7 +63,7 @@ class HYMealItem extends StatelessWidget {
 
   Widget buildOperationInfo() {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.symmetric(vertical: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -80,12 +80,17 @@ class HYMealItem extends StatelessWidget {
       final iconColor =
           favorVM.isContainsFavor(meal) ? Colors.redAccent : Colors.black;
       final text = favorVM.isContainsFavor(meal) ? "已收藏" : "未收藏";
-      return HYOperationItem(
-          Icon(
-            Icons.favorite,
-            color: iconColor,
-          ),
-          text);
+      return GestureDetector(
+        child: HYOperationItem(
+            Icon(
+              Icons.favorite,
+              color: iconColor,
+            ),
+            text),
+        onTap: () {
+          favorVM.handleFavor(meal);
+        },
+      );
     });
   }
 }
