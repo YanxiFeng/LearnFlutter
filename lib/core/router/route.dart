@@ -13,11 +13,14 @@ class HYRouter {
     HYMainScreen.routeName: (ctx) => HYMainScreen(),
     HYMealScreen.routeName: (ctx) => HYMealScreen(),
     HYDetailScreen.routeName: (ctx) => HYDetailScreen(),
-    HYFilterScreen.routeName: (ctx) => HYFilterScreen(),
   };
 
   // 自己扩展
   static final RouteFactory generateRoute = (settings) {
+    if (settings.name == HYFilterScreen.routeName) {
+      return MaterialPageRoute(
+          builder: (ctx) => HYFilterScreen(), fullscreenDialog: true);
+    }
     return null;
   };
 

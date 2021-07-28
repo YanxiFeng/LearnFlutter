@@ -12,6 +12,7 @@ class HYHomeDrawer extends StatelessWidget {
             buildHeaderView(context),
             buildListTile(Icon(Icons.restaurant), "进餐", context, () {
               Navigator.of(context).pop();
+              Navigator.of(context).pushNamed(HYFilterScreen.routeName);
             }),
             buildListTile(Icon(Icons.settings), "过滤", context, () {
               Navigator.of(context).pop();

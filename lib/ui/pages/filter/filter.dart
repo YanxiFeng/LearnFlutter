@@ -8,7 +8,7 @@ class HYFilterScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("filter"),
+        title: Text("美食过滤"),
       ),
       body: HYFilterContent(),
     );
