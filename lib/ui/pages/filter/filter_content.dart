@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/core/viewmodel/filter_view_model.dart';
+import 'package:provider/provider.dart';
 
 class HYFilterContent extends StatelessWidget {
   const HYFilterContent({Key? key}) : super(key: key);
@@ -23,26 +25,39 @@ class HYFilterContent extends StatelessWidget {
 
   Widget buildChoiceSelect() {
     return Expanded(
-      child: ListView(
-        // shrinkWrap: true,
-        // physics: NeverScrollableScrollPhysics(),
-        children: [
-          buildSelectTile("五谷蛋白", "五谷蛋白", (value) {}),
-          buildSelectTile("不含乳糖", "不含乳糖", (value) {}),
-          buildSelectTile("普通素食主义者", "普通素食主义者", (value) {}),
-          buildSelectTile("严格素食主义者", "严格素食主义者", (value) {}),
-        ],
+      child: Consumer<HYFilterViewModel>(
+        builder: (ctx, filterVM, child) {
+          return ListView(
+            // shrinkWrap: true,
+            // physics: NeverScrollableScrollPhysics(),
+            children: [
+              buildSelectTile("五谷蛋白", "五谷蛋白", filterVM.isGlutenFree, (value) {
+                filterVM.isGlutenFree = value;
+              }),
+              buildSelectTile("不含乳糖", "不含乳糖", filterVM.isLactoseFree, (value) {
+                filterVM.isLactoseFree = value;
+              }),
+              buildSelectTile("普通素食主义者", "普通素食主义者", filterVM.isVegetarian,
+                  (value) {
+                filterVM.isVegetarian = value;
+              }),
+              buildSelectTile("严格素食主义者", "严格素食主义者", filterVM.isVegan, (value) {
+                filterVM.isVegan = value;
+              }),
+            ],
+          );
+        },
       ),
     );
   }
 
-  Widget buildSelectTile(
-      String title, String subTitle, void Function(bool) onChanged) {
+  Widget buildSelectTile(String title, String subTitle, bool value,
+      void Function(bool) onChanged) {
     return ListTile(
       title: Text(title),
       subtitle: Text(subTitle),
       trailing: Switch(
-        value: false,
+        value: value,
         onChanged: onChanged,
       ),
     );
