@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learnflutter/ui/pages/detail/detail.dart';
+import 'package:learnflutter/ui/pages/dine/dine.dart';
 import 'package:learnflutter/ui/pages/filter/filter.dart';
 import 'package:learnflutter/ui/pages/main/main.dart';
 import 'package:learnflutter/ui/pages/meal/meal.dart';
@@ -20,6 +21,10 @@ class HYRouter {
     if (settings.name == HYFilterScreen.routeName) {
       return MaterialPageRoute(
           builder: (ctx) => HYFilterScreen(), fullscreenDialog: true);
+    }
+    if (settings.name == HYDineScreen.routeName) {
+      return MaterialPageRoute(
+          builder: (ctx) => HYDineScreen(), fullscreenDialog: true);
     }
     return null;
   };

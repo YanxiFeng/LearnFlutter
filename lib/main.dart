@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:learnflutter/core/viewmodel/favor_view_model.dart';
 import 'package:learnflutter/core/viewmodel/filter_view_model.dart';
 import 'package:learnflutter/core/viewmodel/meal_view_model.dart';
@@ -28,6 +29,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '美食广场',
       theme: HYAppTheme.norTheme,
+      //国际化
+      supportedLocales: [Locale('en', 'US'), Locale('zh', 'CN')],
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate
+      ],
       //路由
       initialRoute: HYRouter.initialRoute,
       routes: HYRouter.routes,

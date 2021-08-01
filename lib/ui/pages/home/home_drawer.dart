@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/ui/pages/dine/dine.dart';
 import 'package:learnflutter/ui/pages/filter/filter.dart';
 
 class HYHomeDrawer extends StatelessWidget {
@@ -12,7 +13,7 @@ class HYHomeDrawer extends StatelessWidget {
             buildHeaderView(context),
             buildListTile(Icon(Icons.restaurant), "进餐", context, () {
               Navigator.of(context).pop();
-              Navigator.of(context).pushNamed(HYFilterScreen.routeName);
+              Navigator.of(context).pushNamed(HYDineScreen.routeName);
             }),
             buildListTile(Icon(Icons.settings), "过滤", context, () {
               Navigator.of(context).pop();
