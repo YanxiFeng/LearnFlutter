@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/i18n/localizations.dart';
 import 'package:learnflutter/ui/pages/home/home_drawer.dart';
 
 import 'home_content.dart';
@@ -10,7 +11,7 @@ class HYHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("美食广场"),
+        title: Text(Localizations.of(context, HYLocalizations).title),
       ),
       body: HYHomeContent(),
       drawer: HYHomeDrawer(),

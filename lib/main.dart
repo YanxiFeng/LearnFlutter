@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:learnflutter/core/viewmodel/favor_view_model.dart';
 import 'package:learnflutter/core/viewmodel/filter_view_model.dart';
 import 'package:learnflutter/core/viewmodel/meal_view_model.dart';
+import 'package:learnflutter/i18n/localizations_delegate.dart';
 import 'package:learnflutter/ui/shared/app_theme.dart';
 import 'package:learnflutter/core/router/route.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate
+        GlobalWidgetsLocalizations.delegate,
+        HYLocalizationDelagate.delagate
       ],
       //路由
       initialRoute: HYRouter.initialRoute,
