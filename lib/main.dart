@@ -10,7 +10,12 @@ void main() {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (ctx) => HYFilterViewModel()),
-      ChangeNotifierProvider(create: (ctx) => HYMealViewModel()),
+      ChangeNotifierProxyProvider<HYFilterViewModel, HYMealViewModel>(
+          create: (ctx) => HYMealViewModel(),
+          update: (ctx, filterVM, mealVM) {
+            mealVM!.updateFilterVM(filterVM);
+            return mealVM;
+          }),
       ChangeNotifierProvider(create: (ctx) => HYFavorViewModel()),
     ],
     child: MyApp(),
