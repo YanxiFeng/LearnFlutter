@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/generated/l10n.dart';
 
 class HYDineContent extends StatelessWidget {
   const HYDineContent({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class HYDineContent extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("进餐"),
+          Text(S.of(context).dine),
           ElevatedButton(
             onPressed: () {
               showDatePicker(
@@ -18,7 +19,7 @@ class HYDineContent extends StatelessWidget {
                   firstDate: DateTime(1990),
                   lastDate: DateTime(2030));
             },
-            child: Text("data"),
+            child: Text(S.of(context).filter),
           )
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/generated/l10n.dart';
 import 'package:learnflutter/ui/pages/dine/dine.dart';
 import 'package:learnflutter/ui/pages/filter/filter.dart';
 
@@ -11,11 +12,11 @@ class HYHomeDrawer extends StatelessWidget {
         child: Column(
           children: [
             buildHeaderView(context),
-            buildListTile(Icon(Icons.restaurant), "进餐", context, () {
+            buildListTile(Icon(Icons.restaurant), S.of(context).dine, context, () {
               Navigator.of(context).pop();
               Navigator.of(context).pushNamed(HYDineScreen.routeName);
             }),
-            buildListTile(Icon(Icons.settings), "过滤", context, () {
+            buildListTile(Icon(Icons.settings), S.of(context).filter, context, () {
               Navigator.of(context).pop();
               Navigator.of(context).pushNamed(HYFilterScreen.routeName);
             }),

@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:learnflutter/core/viewmodel/favor_view_model.dart';
 import 'package:learnflutter/core/viewmodel/filter_view_model.dart';
 import 'package:learnflutter/core/viewmodel/meal_view_model.dart';
+import 'package:learnflutter/generated/l10n.dart';
 import 'package:learnflutter/i18n/localizations_delegate.dart';
 import 'package:learnflutter/ui/shared/app_theme.dart';
 import 'package:learnflutter/core/router/route.dart';
@@ -31,12 +32,13 @@ class MyApp extends StatelessWidget {
       title: '美食广场',
       theme: HYAppTheme.norTheme,
       //国际化
-      supportedLocales: [Locale('en', 'US'), Locale('zh', 'CN')],
+      supportedLocales: S.delegate.supportedLocales,
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
-        HYLocalizationDelagate.delagate
+        HYLocalizationDelagate.delagate,
+        S.delegate
       ],
       //路由
       initialRoute: HYRouter.initialRoute,
