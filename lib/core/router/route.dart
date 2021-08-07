@@ -4,6 +4,7 @@ import 'package:learnflutter/ui/pages/dine/dine.dart';
 import 'package:learnflutter/ui/pages/filter/filter.dart';
 import 'package:learnflutter/ui/pages/main/main.dart';
 import 'package:learnflutter/ui/pages/meal/meal.dart';
+import 'package:learnflutter/ui/pages/native/battery.dart';
 import 'package:learnflutter/ui/pages/native/select_image.dart';
 
 class HYRouter {
@@ -15,6 +16,7 @@ class HYRouter {
     HYMainScreen.routeName: (ctx) => HYMainScreen(),
     HYMealScreen.routeName: (ctx) => HYMealScreen(),
     HYDetailScreen.routeName: (ctx) => HYDetailScreen(),
+    HYBatteryScreen.routeName: (ctx) => HYBatteryScreen(),
   };
 
   // 自己扩展

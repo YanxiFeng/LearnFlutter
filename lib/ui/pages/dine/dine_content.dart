@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:learnflutter/generated/l10n.dart';
+import 'package:learnflutter/ui/pages/native/battery.dart';
 
 class HYDineContent extends StatefulWidget {
   const HYDineContent({Key? key}) : super(key: key);
@@ -39,6 +40,12 @@ class _HYDineContentState extends State<HYDineContent> {
               _selectImage();
             },
             child: Text(S.of(context).selectImage),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(HYBatteryScreen.routeName);
+            },
+            child: Text("Native-电池"),
           )
         ],
       ),
