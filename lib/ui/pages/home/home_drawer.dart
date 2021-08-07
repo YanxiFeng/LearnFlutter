@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/generated/l10n.dart';
 import 'package:learnflutter/ui/pages/dine/dine.dart';
 import 'package:learnflutter/ui/pages/filter/filter.dart';
+import 'package:learnflutter/ui/pages/native/select_image.dart';
 
 class HYHomeDrawer extends StatelessWidget {
   @override
@@ -12,13 +13,21 @@ class HYHomeDrawer extends StatelessWidget {
         child: Column(
           children: [
             buildHeaderView(context),
-            buildListTile(Icon(Icons.restaurant), S.of(context).dine, context, () {
+            buildListTile(Icon(Icons.restaurant), S.of(context).dine, context,
+                () {
               Navigator.of(context).pop();
               Navigator.of(context).pushNamed(HYDineScreen.routeName);
             }),
-            buildListTile(Icon(Icons.settings), S.of(context).filter, context, () {
+            buildListTile(Icon(Icons.settings), S.of(context).filter, context,
+                () {
               Navigator.of(context).pop();
               Navigator.of(context).pushNamed(HYFilterScreen.routeName);
+            }),
+            buildListTile(
+                Icon(Icons.image_rounded), S.of(context).selectImage, context,
+                () {
+              Navigator.of(context).pop();
+              Navigator.of(context).pushNamed(HYSelectImagePage.routeName);
             }),
           ],
         ),

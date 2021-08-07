@@ -4,6 +4,7 @@ import 'package:learnflutter/ui/pages/dine/dine.dart';
 import 'package:learnflutter/ui/pages/filter/filter.dart';
 import 'package:learnflutter/ui/pages/main/main.dart';
 import 'package:learnflutter/ui/pages/meal/meal.dart';
+import 'package:learnflutter/ui/pages/native/select_image.dart';
 
 class HYRouter {
   // 默认启动页面的路由
@@ -25,6 +26,10 @@ class HYRouter {
     if (settings.name == HYDineScreen.routeName) {
       return MaterialPageRoute(
           builder: (ctx) => HYDineScreen(), fullscreenDialog: true);
+    }
+    if (settings.name == HYSelectImagePage.routeName) {
+      return MaterialPageRoute(
+          builder: (ctx) => HYSelectImagePage(), fullscreenDialog: true);
     }
     return null;
   };

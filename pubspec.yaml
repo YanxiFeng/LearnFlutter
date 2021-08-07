@@ -32,6 +32,7 @@ dependencies:
   dio: ^4.0.0
   provider: ^5.0.0
   image_picker: ^0.8.3
+  video_player: ^2.1.12
 
 dev_dependencies:
   flutter_test:
