@@ -1,8 +1,18 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:learnflutter/generated/l10n.dart';
 
-class HYDineContent extends StatelessWidget {
+class HYDineContent extends StatefulWidget {
   const HYDineContent({Key? key}) : super(key: key);
+
+  @override
+  _HYDineContentState createState() => _HYDineContentState();
+}
+
+class _HYDineContentState extends State<HYDineContent> {
+  File? _imageFile;
+  final ImagePicker _picker = ImagePicker();
 
   @override
   Widget build(BuildContext context) {
@@ -11,18 +21,34 @@ class HYDineContent extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(S.of(context).dine),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     showDatePicker(
+          //         context: context,
+          //         initialDate: DateTime.now(),
+          //         firstDate: DateTime(1990),
+          //         lastDate: DateTime(2030));
+          //   },
+          //   child: Text(S.of(context).filter),
+          // ),
+          _imageFile == null
+              ? Text(S.of(context).selectImage)
+              : Image.file(_imageFile!),
           ElevatedButton(
             onPressed: () {
-              showDatePicker(
-                  context: context,
-                  initialDate: DateTime.now(),
-                  firstDate: DateTime(1990),
-                  lastDate: DateTime(2030));
+              _selectImage();
             },
-            child: Text(S.of(context).filter),
+            child: Text(S.of(context).selectImage),
           )
         ],
       ),
     );
+  }
+
+  void _selectImage() async {
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+    setState(() {
+      _imageFile = pickedFile as File?;
+    });
   }
 }
