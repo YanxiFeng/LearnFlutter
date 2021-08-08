@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:learnflutter/main.dart';
 
 class HYBatteryScreen extends StatelessWidget {
   static const String routeName = "/battery";
@@ -37,6 +38,8 @@ class _HYBatteryContentState extends State<HYBatteryContent> {
   }
 
   void getBatteryInfo() async {
+    // event bus发出事件
+    eventBus.fire("event bus");
     final int result = await platform.invokeMethod("getBatteryInfo");
     setState(() {
       _result = result;

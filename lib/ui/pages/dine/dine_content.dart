@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:learnflutter/generated/l10n.dart';
+import 'package:learnflutter/main.dart';
 import 'package:learnflutter/ui/pages/native/battery.dart';
 
 class HYDineContent extends StatefulWidget {
@@ -14,6 +15,19 @@ class HYDineContent extends StatefulWidget {
 class _HYDineContentState extends State<HYDineContent> {
   File? _imageFile;
   final ImagePicker _picker = ImagePicker();
+  String _message = "";
+
+  @override
+  void initState() {
+    super.initState();
+
+    //监听event bus事件
+    eventBus.on().listen((event) {
+      setState(() {
+        _message = event;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +36,7 @@ class _HYDineContentState extends State<HYDineContent> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(S.of(context).dine),
-          // ElevatedButton(
-          //   onPressed: () {
-          //     showDatePicker(
-          //         context: context,
-          //         initialDate: DateTime.now(),
-          //         firstDate: DateTime(1990),
-          //         lastDate: DateTime(2030));
-          //   },
-          //   child: Text(S.of(context).filter),
-          // ),
+          Text(_message),
           _imageFile == null
               ? Text(S.of(context).selectImage)
               : Image.file(_imageFile!),

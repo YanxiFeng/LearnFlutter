@@ -1,3 +1,4 @@
+import 'package:event_bus/event_bus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:learnflutter/core/viewmodel/favor_view_model.dart';
@@ -8,6 +9,8 @@ import 'package:learnflutter/i18n/localizations_delegate.dart';
 import 'package:learnflutter/ui/shared/app_theme.dart';
 import 'package:learnflutter/core/router/route.dart';
 import 'package:provider/provider.dart';
+
+final eventBus = EventBus();
 
 void main() {
   runApp(MultiProvider(
