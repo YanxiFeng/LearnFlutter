@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learnflutter/ui/pages/detail/detail.dart';
 import 'package:learnflutter/ui/pages/dine/dine.dart';
+import 'package:learnflutter/ui/pages/dynamic/dynamic.dart';
 import 'package:learnflutter/ui/pages/filter/filter.dart';
 import 'package:learnflutter/ui/pages/main/main.dart';
 import 'package:learnflutter/ui/pages/meal/meal.dart';
@@ -17,6 +18,7 @@ class HYRouter {
     HYMealScreen.routeName: (ctx) => HYMealScreen(),
     HYDetailScreen.routeName: (ctx) => HYDetailScreen(),
     HYBatteryScreen.routeName: (ctx) => HYBatteryScreen(),
+    HYDynamicScreen.routeName: (ctx) => HYDynamicScreen(),
   };
 
   // 自己扩展

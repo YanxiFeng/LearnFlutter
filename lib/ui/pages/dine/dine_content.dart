@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:learnflutter/generated/l10n.dart';
 import 'package:learnflutter/main.dart';
+import 'package:learnflutter/ui/pages/dynamic/dynamic.dart';
 import 'package:learnflutter/ui/pages/native/battery.dart';
 
 class HYDineContent extends StatefulWidget {
@@ -45,6 +46,12 @@ class _HYDineContentState extends State<HYDineContent> {
               _selectImage();
             },
             child: Text(S.of(context).selectImage),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(HYDynamicScreen.routeName);
+            },
+            child: Text("动态化页面"),
           ),
           ElevatedButton(
             onPressed: () {
