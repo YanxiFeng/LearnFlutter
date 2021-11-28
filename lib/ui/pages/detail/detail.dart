@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learnflutter/core/model/meal_model.dart';
-import 'package:learnflutter/core/viewmodel/favor_view_model.dart';
 import 'package:learnflutter/ui/pages/detail/detail_content.dart';
 import 'package:learnflutter/ui/pages/detail/detail_floating_button.dart';
-import 'package:provider/provider.dart';
 
 class HYDetailScreen extends StatelessWidget {
   static const String routeName = "/detail";
