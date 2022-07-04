@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:learnflutter/generated/l10n.dart';
 import 'package:learnflutter/main.dart';
 import 'package:learnflutter/ui/pages/dynamic/dynamic.dart';
+import 'package:learnflutter/ui/pages/experiment/ios_learner.dart';
 import 'package:learnflutter/ui/pages/native/battery.dart';
 
 class HYDineContent extends StatefulWidget {
@@ -58,7 +59,7 @@ class _HYDineContentState extends State<HYDineContent> {
               Navigator.of(context).pushNamed(HYBatteryScreen.routeName);
             },
             child: Text("Native-电池"),
-          )
+          ),
         ],
       ),
     );

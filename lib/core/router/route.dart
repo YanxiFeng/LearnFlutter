@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/ui/pages/detail/detail.dart';
 import 'package:learnflutter/ui/pages/dine/dine.dart';
 import 'package:learnflutter/ui/pages/dynamic/dynamic.dart';
+import 'package:learnflutter/ui/pages/experiment/ios_learner.dart';
 import 'package:learnflutter/ui/pages/filter/filter.dart';
 import 'package:learnflutter/ui/pages/main/main.dart';
 import 'package:learnflutter/ui/pages/meal/meal.dart';
@@ -34,6 +35,10 @@ class HYRouter {
     if (settings.name == HYSelectImagePage.routeName) {
       return MaterialPageRoute(
           builder: (ctx) => HYSelectImagePage(), fullscreenDialog: true);
+    }
+    if (settings.name == HYIosLearnerScreen.routeName) {
+      return MaterialPageRoute(
+          builder: (ctx) => HYIosLearnerScreen(), fullscreenDialog: true);
     }
     return null;
   };

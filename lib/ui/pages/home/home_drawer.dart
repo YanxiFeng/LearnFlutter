@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learnflutter/generated/l10n.dart';
 import 'package:learnflutter/ui/pages/dine/dine.dart';
+import 'package:learnflutter/ui/pages/experiment/ios_learner.dart';
 import 'package:learnflutter/ui/pages/filter/filter.dart';
 import 'package:learnflutter/ui/pages/native/select_image.dart';
 
@@ -28,6 +29,11 @@ class HYHomeDrawer extends StatelessWidget {
                 () {
               Navigator.of(context).pop();
               Navigator.of(context).pushNamed(HYSelectImagePage.routeName);
+            }),
+            buildListTile(
+                Icon(Icons.image_rounded), S.of(context).dine, context, () {
+              Navigator.of(context).pop();
+              Navigator.of(context).pushNamed(HYIosLearnerScreen.routeName);
             }),
           ],
         ),
