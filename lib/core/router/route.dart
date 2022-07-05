@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/ui/pages/detail/detail.dart';
 import 'package:learnflutter/ui/pages/dine/dine.dart';
 import 'package:learnflutter/ui/pages/dynamic/dynamic.dart';
+import 'package:learnflutter/ui/pages/experiment/inherited_widget.dart';
 import 'package:learnflutter/ui/pages/experiment/ios_learner.dart';
 import 'package:learnflutter/ui/pages/filter/filter.dart';
 import 'package:learnflutter/ui/pages/main/main.dart';
@@ -20,6 +21,7 @@ class HYRouter {
     HYDetailScreen.routeName: (ctx) => HYDetailScreen(),
     HYBatteryScreen.routeName: (ctx) => HYBatteryScreen(),
     HYDynamicScreen.routeName: (ctx) => HYDynamicScreen(),
+    HYInheritedWidgetScreen.routeName: (ctx) => HYInheritedWidgetScreen()
   };
 
   // 自己扩展
